@@ -1,0 +1,90 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "DM Serif Display", Georgia, serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: #f6f7f3;
+  --foreground: #233027;
+  --card: #ffffff;
+  --card-foreground: #233027;
+  --popover: #ffffff;
+  --popover-foreground: #233027;
+  --primary: #2e7954;
+  --primary-foreground: #ffffff;
+  --border: #e3e8e0;
+  --input: #e3e8e0;
+  --ring: #7aa982;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--background);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid rgba(122, 169, 130, 0.36);
+  outline-offset: 2px;
+}
+
+.font-display {
+  font-family: "DM Serif Display", Georgia, serif;
+}
+
+::selection {
+  background: #dceadf;
+  color: #233027;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .animate-pulse {
+    animation-duration: 2.3s;
+  }
+}
+
+@media (max-width: 639px) {
+  h1 {
+    font-size: 2.55rem;
+  }
+}
